@@ -35,7 +35,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl">CareerHub</a>
+                <a className="btn btn-ghost text-lg lg:text-3xl ">CareerHub</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -43,7 +43,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end ">
-                <a className="btn bg-[#9873FF] text-white text-xl">Star Applying</a>
+                <a className="btn bg-[#9873FF] text-white text-sm">Star Applying</a>
             </div>
         </div>
     );
