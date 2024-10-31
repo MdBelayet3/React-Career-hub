@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { CiLocationOn, CiDollar } from "react-icons/ci";
+import { Link } from 'react-router-dom';
 
 const FeaturedJob = ({ job }) => {
-    console.log(job)
-    const { company_name, job_title, job_type, location, logo, remote_or_onsite, salary } = job;
+    const { id,company_name, job_title, job_type, location, logo, remote_or_onsite, salary } = job;
     return (
         <div className='shadow-2xl p-10 rounded-2xl'>
             <img src={logo} alt={`Logo of ${company_name}`} />
@@ -19,7 +19,9 @@ const FeaturedJob = ({ job }) => {
                     <p className='flex gap-2 items-center'><span><CiDollar /></span>{salary}</p>
                 </div>
             </div>
-            <button className='btn bg-[#9873FF] text-xl font-extrabold p-3 text-white mt-4'>View Details</button>
+            <Link to={`/job/${id}`}>
+                <button className='btn bg-[#9873FF] text-xl font-extrabold p-3 text-white mt-4'>View Details</button>
+            </Link>
         </div>
     );
 };
