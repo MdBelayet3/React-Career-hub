@@ -16,15 +16,15 @@ const AppliedJobs = () => {
         const storedJobApplicationId = getStoredJobApplication();
         if (jobs.length > 0) {
 
-            // const appliedJobs = jobs.filter(job => storedJobApplicationId.includes(job.id));
+            const appliedJobs = jobs.filter(job => storedJobApplicationId.includes(job.id));
 
-            const appliedJobs = [];
-            for (const id of storedJobApplicationId) {
-                const job = jobs.find(job => job.id === id);
-                if (job) {
-                    appliedJobs.push(job)
-                }
-            }
+            // const appliedJobs = [];
+            // for (const id of storedJobApplicationId) {
+            //     const job = jobs.find(job => job.id === id);
+            //     if (job) {
+            //         appliedJobs.push(job)
+            //     }
+            // }
             setJobsApplied(appliedJobs);
             setDisplayJobs(appliedJobs);
             // console.log(jobs, storedJobApplicationId, appliedJobs);
