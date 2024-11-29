@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobsApplication } from "../../utilities/localStorage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
 
@@ -21,6 +22,9 @@ const JobDetails = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Career Hub | Job-{id}</title>
+            </Helmet>
             <h2 className="text-3xl font-black text-center my-20">Job details</h2>
             <div className="grid md:grid-cols-3 gap-5">
                 <div className="grid col-span-2 gap-6">

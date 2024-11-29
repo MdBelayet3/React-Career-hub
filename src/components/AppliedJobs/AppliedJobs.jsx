@@ -3,6 +3,7 @@ import { getStoredJobApplication } from "../../utilities/localStorage";
 import { useEffect, useState } from "react";
 import AppliedJob from "../AppliedJob/AppliedJob";
 import { FaChevronDown } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
 
@@ -31,15 +32,15 @@ const AppliedJobs = () => {
         }
     }, [jobs])
 
-    const handleFilterBtn = filter =>{
-        if(filter === 'all'){
+    const handleFilterBtn = filter => {
+        if (filter === 'all') {
             setDisplayJobs(jobsApplied)
         }
-        else if(filter === 'remote'){
+        else if (filter === 'remote') {
             const remoteJobs = jobsApplied.filter(job => job.remote_or_onsite === 'Remote');
             setDisplayJobs(remoteJobs);
         }
-        else if(filter === 'onsite'){
+        else if (filter === 'onsite') {
             const onsiteJobs = jobsApplied.filter(job => job.remote_or_onsite === 'Onsite');
             setDisplayJobs(onsiteJobs);
         }
@@ -47,6 +48,9 @@ const AppliedJobs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title> Career Hub - applied-jobs</title>
+            </Helmet>
             <h2 className="mt-10 mb-20 text-2xl font-black text-center">Applied Jobs</h2>
             <details className="dropdown mb-10 ">
                 <summary className="btn m-1 font-semibold text-xl">Filter By <FaChevronDown /></summary>
